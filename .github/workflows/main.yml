@@ -1,4 +1,3 @@
-
 name: Build Android APK
 
 on:
@@ -23,6 +22,8 @@ jobs:
 
       - name: Install Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: Install SDK 35
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
@@ -49,4 +50,3 @@ jobs:
         with:
           name: MyMusicPlayer-APK
           path: source/MyMusicPlayer-v1/app/build/outputs/apk/debug/app-debug.apk
-          
